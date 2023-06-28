@@ -1,0 +1,19 @@
+create database tasksdb1228;
+use tasksdb1228;
+
+create table construtor(
+  id integer not null auto_increment,
+  email varchar(50) not null,
+  senha char(64) not null, 
+  primary key(id)
+);
+
+create table contrato(
+  id integer not null auto_increment,
+  descricao varchar(50) not null, 
+  orcamneto int(11) not null,
+  prioridade int(11) not null,
+  construtor_id integer not null,
+  primary key(id),
+  foreign key(construtor_id) references construtor(id)
+);
